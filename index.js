@@ -1,7 +1,11 @@
 const inq = require('inquirer');
+
+const Render = require('./src/renderTemplate');
+
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+
 
 const myTeam = [];
 
@@ -134,6 +138,8 @@ async function init()
             }
     }
     console.log(myTeam);
+    var role = Render(myTeam);
+    console.log(role);
 }
 
 init();
