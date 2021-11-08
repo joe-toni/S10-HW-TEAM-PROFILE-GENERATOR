@@ -22,5 +22,8 @@
   "homepage": "https://github.com/joe-toni/S10-HW-TEAM-PROFILE-GENERATOR#readme",
   "dependencies": {
     "inquirer": "^8.2.0"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1"
   }
 }
