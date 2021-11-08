@@ -1,0 +1,26 @@
+{
+  "name": "s10-hw-team-profile-generator",
+  "version": "1.0.0",
+  "description": "assignment 10 ",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joe-toni/S10-HW-TEAM-PROFILE-GENERATOR.git"
+  },
+  "author": "jose faburrieta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joe-toni/S10-HW-TEAM-PROFILE-GENERATOR/issues"
+  },
+  "homepage": "https://github.com/joe-toni/S10-HW-TEAM-PROFILE-GENERATOR#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}
