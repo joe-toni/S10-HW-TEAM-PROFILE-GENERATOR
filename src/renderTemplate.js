@@ -41,7 +41,7 @@ function createEmployeeCards(teamArray)
     `;
         cards += newCard;
     }
-    console.log(cards);
+    return cards;
 }
 
 function renderTemplate(teamArray)
@@ -63,13 +63,16 @@ function renderTemplate(teamArray)
 <body>
 `;
 
-createEmployeeCards(teamArray);
+var middleHTML = createEmployeeCards(teamArray);
 
 var closingHTML = 
 `
 </body>
 </html>
 `;
+
+result += openingHTML + middleHTML + closingHTML;
+
 return result;
 }
 

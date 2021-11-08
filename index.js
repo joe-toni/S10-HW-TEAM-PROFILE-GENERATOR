@@ -1,4 +1,5 @@
 const inq = require('inquirer');
+const fs = require('fs');
 
 const Render = require('./src/renderTemplate');
 
@@ -137,9 +138,8 @@ async function init()
                 createNewEmployee("Intern", employeeInfo);
             }
     }
-    console.log(myTeam);
-    var role = Render(myTeam);
-    console.log(role);
+    var content = Render(myTeam);
+    fs.writeFile("./dist/renderedTeam.html", content, (err) => {if(err)throw err;});
 }
 
 init();
