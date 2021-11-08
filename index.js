@@ -1,4 +1,7 @@
 const inq = require('inquirer');
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 
 const myTeam = [];
 
@@ -83,8 +86,28 @@ const obtainIntern =
 
 function createNewEmployee(employeeType,data)
 {
-    console.log(`created new ${employeeType} employee.`)
-    return;
+    console.log(`created new ${employeeType} employee.`);
+    switch(employeeType)
+    {
+        case 'Manager':
+            {
+                let employee = new Manager(data.Name, data.Id, data.Email, data.Office);
+                myTeam.push(employee);
+                break;
+            }
+        case 'Engineer':
+            {
+                let employee = new Engineer(data.Name, data.Id, data.Email, data.Github);
+                myTeam.push(employee);
+                break;
+            }
+        case 'Intern':
+            {
+                let employee = new Intern(data.Name, data.Id, data.Email, data.School);
+                myTeam.push(employee);
+                break;
+            }
+    }
 }
 
 
@@ -110,6 +133,7 @@ async function init()
                 createNewEmployee("Intern", employeeInfo);
             }
     }
+    console.log(myTeam);
 }
 
 init();
