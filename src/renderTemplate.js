@@ -58,15 +58,23 @@ function renderTemplate(teamArray)
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/59358b8b21.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./renderedTeam.css">
-    <title>Document</title>
+    <title>My Team</title>
 </head>
+
 <body>
+
+      <div id ="header" class="jumbotron jumbotron-fluid mx-auto bg-danger">
+          <h1 class="display-4 text-white">My Team</h1>
+      </div>
+    
+      <div id="container">
 `;
 
 var middleHTML = createEmployeeCards(teamArray);
 
 var closingHTML = 
 `
+    </div>
 </body>
 </html>
 `;
