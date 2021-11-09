@@ -1,3 +1,6 @@
+//This function determines the class of each object in an array producing a two strings unique to that class
+//It then takes those strings and the objects data and places it in the template for a HTML card class div in template literal
+//Afterwards it appends that newly populated template to a string that will be given to the main function
 function createEmployeeCards(teamArray)
 {
     var cards = "";
@@ -15,7 +18,7 @@ function createEmployeeCards(teamArray)
         else if(current === 'Engineer')
         {
             customIcon = `<i class="fas fa-glasses"></i> Engineer`;
-            customInfo = `GitHub: <a href ="https://github.com/${teamArray[i].getGithub()}"> ${teamArray[i].getGithub()} </a>`;
+            customInfo = `GitHub: <a href ="https://github.com/${teamArray[i].getGithub()}" target= "_blank"> ${teamArray[i].getGithub()} </a>`;
         }
         else if (current === 'Intern')
         {
@@ -44,6 +47,8 @@ function createEmployeeCards(teamArray)
     return cards;
 }
 
+//This function creates an empty string and appends the beginning of an HTML file, a dynamically generated body, and the Endding of the HTMl file
+//It does this in sequence to produce the complete internal HTML of a file in string form before returning that string.
 function renderTemplate(teamArray)
 {
     var result = "";
@@ -84,4 +89,5 @@ result += openingHTML + middleHTML + closingHTML;
 return result;
 }
 
+//Exporting the main function that will return a string representing the complete internal structure of an HTML file
 module.exports = renderTemplate;

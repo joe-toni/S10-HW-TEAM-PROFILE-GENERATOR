@@ -1,15 +1,16 @@
+//Installing all the requirements from node or npm
 const inq = require('inquirer');
 const fs = require('fs');
-
+//Installing the helper js file from our local directory
 const Render = require('./src/renderTemplate');
-
+//Bringing in all the classes that will be used in our application from our local directory
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
-
+//This array will be used to contain every new employee object created
 const myTeam = [];
-
+//This collection of question objects will be used when the program askes for a specific input based on what the user needs
 const obtainManager = 
 [
     {
@@ -88,7 +89,7 @@ const obtainIntern =
         message: "What is the Intern's school name?"
     }
 ];
-
+//This function uses a switch to check what kind of employee needs to be created, creating it, then pushing it into our global array
 function createNewEmployee(employeeType,data)
 {
     console.log(`created new ${employeeType} employee.`);
@@ -115,7 +116,8 @@ function createNewEmployee(employeeType,data)
     }
 }
 
-
+//This main function initializes our application and works asyncronously to wait for the user input before moving on to the next step
+//It also uses a while loop to continue building the team until the user selects finish when prompted.
 async function init()
 {
     const managerInfo = await inq.prompt(obtainManager);
@@ -138,7 +140,9 @@ async function init()
                 createNewEmployee("Intern", employeeInfo);
             }
     }
+    //Sending our global array over to our helper js file to have the HTML generated
     var content = Render(myTeam);
+    //Taking the response and writing or overwriting the file in the specified directory with the response as the inner content.
     fs.writeFile("./dist/renderedTeam.html", content, (err) => {if(err)throw err;});
 }
 
